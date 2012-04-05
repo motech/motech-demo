@@ -40,7 +40,7 @@ public class Patient extends CouchEntity {
     @Setter
     @NotNull
     @Pattern(regexp = "^\\d{10}$", message = "Mobile Phone Number should be numeric and 10 digits long.")
-    protected String mobilePhoneNumber;
+    protected String phoneNumber;
 
     @Getter
     @Setter

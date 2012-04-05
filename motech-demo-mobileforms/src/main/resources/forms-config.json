@@ -1,6 +1,6 @@
 [
     {
-        "name" : "patient",
+        "name" : "Patient",
         "forms" : [
             {
                 "name" : "registerPatient",

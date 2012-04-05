@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xf:xforms xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="15">
+    <xf:model>
+        <xf:instance id="patientRegistration">
+            <patientRegistration id="1" name="Patient Registration">
+                <dateOpened/>
+                <externalId/>
+                <name/>
+                <dateOfBirth/>
+                <gender>F</gender>
+                <phoneNumber/>
+            </patientRegistration>
+        </xf:instance>
+        <xf:bind constraint=". &lt;= 'today()'" id="dateOpened"
+                 message="Invalid date: date specified is in the future" nodeset="/patientRegistration/dateOpened"
+                 required="true()" type="xsd:date"/>
+        <xf:bind action="show" id="externalId" nodeset="/patientRegistration/externalId" required="true()"
+                 type="xsd:int"  constraint=". &gt; 999 and . &lt; 10000000"
+                 message="MoTeCH ID must be 4 digits long"/>
+        <xf:bind id="name" nodeset="/patientRegistration/name" required="true()"
+                 type="xsd:string"/>
+        <xf:bind constraint=". &lt;= 'today()'" id="dateOfBirth"
+                 message="Invalid date: date entered is in the future"
+                 nodeset="/patientRegistration/dateOfBirth"
+                 required="true()" type="xsd:date"/>
+        <xf:bind action="show" id="gender" nodeset="/patientRegistration/gender"
+                 required="true()" type="xsd:string" />
+        <xf:bind id="phoneNumber" nodeset="/patientRegistration/phoneNumber" type="xsd:int"
+                 constraint=". &lt;= 999999999" message="Number too large. It should be 10 digits long"/>
+    </xf:model>
+    <xf:group id="1">
+        <xf:label>Page1</xf:label>
+        <xf:input bind="dateOpened">
+            <xf:label>Reg. date</xf:label>
+        </xf:input>
+        <xf:input bind="externalId">
+            <xf:label>External ID</xf:label>
+        </xf:input>
+        <xf:input bind="name">
+            <xf:label>First name</xf:label>
+        </xf:input>
+        <xf:input bind="dateOfBirth">
+            <xf:label>Date of birth</xf:label>
+        </xf:input>
+        <xf:select1 bind="gender">
+            <xf:label>Gender</xf:label>
+            <xf:item id="M">
+                <xf:label>Male</xf:label>
+                <xf:value>M</xf:value>
+            </xf:item>
+            <xf:item id="F">
+                <xf:label>Female</xf:label>
+                <xf:value>F</xf:value>
+            </xf:item>
+        </xf:select1>
+        <xf:input bind="phoneNumber">
+            <xf:label>Contact phone no.</xf:label>
+        </xf:input>
+    </xf:group>
+</xf:xforms>

@@ -27,8 +27,8 @@ public class PatientBuilder {
         return this;
     }
 
-    public PatientBuilder withMobileNumber(String mobileNumber) {
-        patient.setMobilePhoneNumber(mobileNumber);
+    public PatientBuilder withPhoneNumber(String mobileNumber) {
+        patient.setPhoneNumber(mobileNumber);
         return this;
     }
 
@@ -51,7 +51,7 @@ public class PatientBuilder {
         return this.withId(UUID.randomUUID().toString()).
                 withExternalId("1234_" + DateUtil.now().getMillis()).
                 withName("name").
-                withMobileNumber(Long.toString(UniqueMobileNumber.generate())).
+                withPhoneNumber(Long.toString(UniqueMobileNumber.generate())).
                 withDateOfBirth(DateUtil.newDate(1990, 5, 21)).
                 withGender(Gender.Female);
     }
