@@ -3,6 +3,7 @@ package org.motechproject.demo.builder;
 import org.joda.time.LocalDate;
 import org.motechproject.demo.domain.patient.Gender;
 import org.motechproject.demo.domain.patient.Patient;
+import org.motechproject.demo.domain.patient.Status;
 import org.motechproject.demo.testutils.UniqueMobileNumber;
 import org.motechproject.util.DateUtil;
 
@@ -16,8 +17,13 @@ public class PatientBuilder {
         return this;
     }
 
-    public PatientBuilder withPatientId(String id) {
-        this.patient.setPatientId(id);
+    public PatientBuilder withExternalId(String id) {
+        this.patient.setExternalId(id);
+        return this;
+    }
+
+    public PatientBuilder withName(String name) {
+        this.patient.setName(name);
         return this;
     }
 
@@ -26,15 +32,16 @@ public class PatientBuilder {
         return this;
     }
 
-    public PatientBuilder withPasscode(String passcode) {
-        patient.setPasscode(passcode);
-        return this;
-    }
-
     public PatientBuilder withGender(Gender gender) {
         patient.setGender(gender);
         return this;
     }
+
+    public PatientBuilder withStatus(Status status) {
+        patient.setStatus(status);
+        return this;
+    }
+
     public PatientBuilder withDateOfBirth(LocalDate dateOfBirth) {
         patient.setDateOfBirth(dateOfBirth);
         return this;
@@ -42,9 +49,9 @@ public class PatientBuilder {
 
     public PatientBuilder withDefaults() {
         return this.withId(UUID.randomUUID().toString()).
-                withPatientId("1234_" + DateUtil.now().getMillis()).
+                withExternalId("1234_" + DateUtil.now().getMillis()).
+                withName("name").
                 withMobileNumber(Long.toString(UniqueMobileNumber.generate())).
-                withPasscode("1234").
                 withDateOfBirth(DateUtil.newDate(1990, 5, 21)).
                 withGender(Gender.Female);
     }

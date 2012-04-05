@@ -25,17 +25,17 @@ public class AllPatientsIT extends SpringIntegrationTest {
 
         Patient loadedPatient = allPatients.get(patient.getId());
         assertNotNull(loadedPatient);
-        assertEquals(patient.getPatientId(), loadedPatient.getPatientId());
+        assertEquals(patient.getExternalId(), loadedPatient.getExternalId());
     }
 
     @Test
-    public void shouldFindByPatientId() {
+    public void shouldFindByExternalId() {
         Patient patient = PatientBuilder.startRecording().withDefaults().build();
         allPatients.add(patient);
 
-        Patient loadedPatient = allPatients.findByPatientId(patient.getPatientId());
+        Patient loadedPatient = allPatients.findByExternalId(patient.getExternalId());
         assertNotNull(loadedPatient);
-        assertEquals(patient.getPatientId(), loadedPatient.getPatientId());
+        assertEquals(patient.getExternalId(), loadedPatient.getExternalId());
     }
 
 }

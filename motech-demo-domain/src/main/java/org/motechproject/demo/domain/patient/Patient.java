@@ -22,7 +22,19 @@ public class Patient extends CouchEntity {
 
     @Getter
     @Setter
-    protected String patientId;
+    @NotNull
+    protected String externalId;
+
+    @Getter
+    @Setter
+    @NotNull
+    protected String name;
+
+    @Getter
+    @Setter
+    @NotNull
+    private Gender gender;
+
 
     @Getter
     @Setter
@@ -39,19 +51,14 @@ public class Patient extends CouchEntity {
 
     @Getter
     @Setter
-    @NotNull
-    private Gender gender;
+    private Status status;
 
     @Getter
     @Setter
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(style = "S-", pattern = "dd/MM/yyyy")
-    private Date registrationDate;
+    private Date dateOpened;
 
-    @Getter
-    @Setter
-    @NotNull
-    private String passcode;
 
     @JsonIgnore
     public int getAge() {

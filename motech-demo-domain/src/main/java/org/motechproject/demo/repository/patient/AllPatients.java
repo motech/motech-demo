@@ -21,8 +21,8 @@ public class AllPatients extends MotechBaseRepository<Patient> {
     }
 
     @GenerateView
-    public Patient findByPatientId(String patientId) {
-        ViewQuery q = createQuery("by_patientId").key(patientId).includeDocs(true);
+    public Patient findByExternalId(String externalId) {
+        ViewQuery q = createQuery("by_externalId").key(externalId).includeDocs(true);
         List<Patient> patients = db.queryView(q, Patient.class);
         if (patients.isEmpty()) return null;
 

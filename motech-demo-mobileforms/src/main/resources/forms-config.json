@@ -1,0 +1,12 @@
+[
+    {
+        "name" : "patient",
+        "forms" : [
+            {
+                "name" : "registerPatient",
+                "fileName" :  "RegisterPatient.xml",
+                "bean":"org.motechproject.demo.domain.patient.Patient"
+            }
+        ]
+    }
+]

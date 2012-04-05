@@ -4,13 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>motech-demo</groupId>
+    <groupId>org.motechproject</groupId>
     <artifactId>motech-demo</artifactId>
     <packaging>pom</packaging>
     <version>0.1-SNAPSHOT</version>
     <modules>
         <module>motech-demo-webapp</module>
         <module>motech-demo-domain</module>
+        <module>motech-demo-mobile</module>
+        <module>motech-demo-mobileforms</module>
     </modules>
 
     <properties>
@@ -47,7 +49,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
