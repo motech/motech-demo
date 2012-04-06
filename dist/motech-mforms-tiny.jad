@@ -1,0 +1,6 @@
+MIDlet-Jar-URL: motech-mforms-tiny-0.8.0.jar
+MIDlet-Jar-Size: 125784
+MIDlet-Name: MoTeCH mForms
+MIDlet-Vendor: MoTeCH Project
+MIDlet-Version: 0.8.0
+MIDlet-1: MoTeCH mForms, /icons/motech.png, org.fcitmuk.epihandy.forms.MainForm
