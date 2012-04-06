@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.ektorp.support.TypeDiscriminator;
+import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.Period;
 import org.joda.time.PeriodType;
@@ -15,7 +16,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import java.util.Date;
 
 @TypeDiscriminator("doc.documentType == 'Patient'")
 public class Patient extends CouchEntity {
@@ -56,8 +56,8 @@ public class Patient extends CouchEntity {
     @Getter
     @Setter
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(style = "S-", pattern = "dd/MM/yyyy")
-    private Date dateOpened;
+    @DateTimeFormat(style = "S-", pattern = "dd/MM/yyyy HH:mm")
+    private DateTime dateOpened;
 
 
     @JsonIgnore

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xf:xforms xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="15">
+<xf:xforms xmlns:xf="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="1">
     <xf:model>
         <xf:instance id="patientRegistration">
             <patientRegistration id="1" name="Patient Registration">
@@ -9,6 +9,7 @@
                 <dateOfBirth/>
                 <gender>F</gender>
                 <phoneNumber/>
+                <formname>registerPatient</formname>
             </patientRegistration>
         </xf:instance>
         <xf:bind constraint=". &lt;= 'today()'" id="dateOpened"
@@ -27,6 +28,7 @@
                  required="true()" type="xsd:string" />
         <xf:bind id="phoneNumber" nodeset="/patientRegistration/phoneNumber" type="xsd:int"
                  constraint=". &lt;= 999999999" message="Number too large. It should be 10 digits long"/>
+        <xf:bind id="formname" nodeset="/ancVisit/formname" required="true()" type="xsd:string" visible="false()"/>
     </xf:model>
     <xf:group id="1">
         <xf:label>Page1</xf:label>
@@ -55,6 +57,9 @@
         </xf:select1>
         <xf:input bind="phoneNumber">
             <xf:label>Contact phone no.</xf:label>
+        </xf:input>
+        <xf:input bind="formname">
+          <xf:label>formName</xf:label>
         </xf:input>
     </xf:group>
 </xf:xforms>
