@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+     xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:spring="http://www.springframework.org/tags" version="2.0">
+
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+
+    <page:list render="true" id="pl_org_motechproject_demo_domain_patient" items="${patients}" z="L3I+a9K75zBL/mAhB/RvaBuiT6g=">
+        <c:if test="${flashError != null}">
+            <div class="error"> <c:out value="${flashError}"/> </div>
+        </c:if>
+
+        <table:table data="${patients}" id="l_org_motechproject_demo_domain_patient" path="/patients/summary" show_label="Patient Dashboard" create="false" update="false" delete="false" >
+            <table:column id="c_org_motechproject_demo_domain_patient_externalId" property="externalId"
+                          z="4I1LBMUNYSxNw1zomaU2BkBlauc="/>
+            <table:column id="c_org_motechproject_demo_domain_patient_name" property="name"
+                          z="4I1LBMUNYSxNw1zomaU2BkBlauc="/>
+            <table:column id="c_org_motechproject_demo_domain_patient_phoneNumber" property="phoneNumber"
+                          z="7Q1JZV8VeDnWQrIfdkR4tVmzIOQ="/>
+            <table:column dateTimePattern="dd/MM/yyyy"
+                          id="c_org_motechproject_demo_domain_patient_dateOfBirth" property="dateOfBirth"
+                          z="lOla2UTSFt+Jb+D2uFWNFNLkszo="/>
+            <table:column id="c_org_motechproject_demo_domain_patient_gender" property="gender" z="user-managed"/>
+            <table:column dateTimePattern="dd/MM/yyyy"
+                          id="c_org_motechproject_demo_domain_patient_dateOpened"
+                          property="dateOpened" z="user-managed"/>
+            <table:column id="c_org_motechproject_demo_domain_patient_status" property="status" z="user-managed"/>
+        </table:table>
+
+    </page:list>
+</div>
