@@ -9,14 +9,12 @@
     <name>Motech demo webapp</name>
     <parent>
         <artifactId>motech-demo</artifactId>
-        <groupId>motech-demo</groupId>
+        <groupId>org.motechproject.demo</groupId>
         <version>0.1-SNAPSHOT</version>
     </parent>
-
     <properties>
         <build.dir>../build</build.dir>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.motechproject</groupId>
@@ -165,6 +163,7 @@
                                      classpathref="dependencies"
                                      password="${mysql.password}"
                                      src="${project.basedir}/../build/sql/tables_mysql_innodb.sql"/>
+
                                 <echo message="Quartz schema loading: END"/>
                             </target>
                         </configuration>
