@@ -6,6 +6,15 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
 
+    <spring:url value="/patients/patientReport.xls" var="patient_download_url"/>
+    <form action="${patient_download_url}" method="GET" id="downloadPatientsForm">
+        <span class="submit" id="downloadPatientsSpan">
+            <script type="text/javascript">Spring.addDecoration(new Spring.ValidateAllDecoration({elementId:'downloadPatients', event:'onclick'}));</script>
+            <input id="downloadPatients" type="submit" value="Download patient report"/>
+        </span>
+    </form>
+    <br/>
+
     <page:list render="true" id="pl_org_motechproject_demo_domain_patient" items="${patients}" z="L3I+a9K75zBL/mAhB/RvaBuiT6g=">
         <c:if test="${flashError != null}">
             <div class="error"> <c:out value="${flashError}"/> </div>
@@ -29,4 +38,15 @@
         </table:table>
 
     </page:list>
-</div>
+    <script type="text/javascript">
+        <![CDATA[
+            dojo.addOnLoad(function() {
+            dojo.connect(dojo.byId("downloadPatients"), "onclick", function(event){
+                event.preventDefault();
+                dojo.byId('downloadPatientsForm').submit();
+            });
+            });
+        ]]>
+    </script>
+    </div>
+
