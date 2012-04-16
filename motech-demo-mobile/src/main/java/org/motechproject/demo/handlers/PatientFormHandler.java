@@ -2,7 +2,6 @@ package org.motechproject.demo.handlers;
 
 import org.motechproject.demo.domain.patient.Gender;
 import org.motechproject.demo.domain.patient.Patient;
-import org.motechproject.demo.domain.patient.Status;
 import org.motechproject.demo.formbean.PatientForm;
 import org.motechproject.demo.repository.patient.AllPatients;
 import org.motechproject.demo.service.PatientService;
@@ -43,8 +42,6 @@ public class PatientFormHandler implements FormPublishHandler {
         patient.setGender(Gender.get(form.getGender()));
         patient.setPhoneNumber(form.getPhoneNumber());
         patient.setDateOfBirth(DateUtil.newDate(form.getDateOfBirth()));
-        patient.setStatus(Status.Active);
-        patient.setDateOpened(DateUtil.newDateTime(form.getDateOpened()));
         return patient;
     }
 }

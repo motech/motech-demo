@@ -29,9 +29,6 @@ public class PatientForm extends FormBean {
     @RegEx(pattern = GENDER_PATTERN)
     private String gender;
 
-    @Required
-    private Date dateOpened;
-
     @RegEx(pattern = PHONE_NO_PATTERN)
     private String phoneNumber;
 }

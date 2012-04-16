@@ -32,8 +32,8 @@
                           z="lOla2UTSFt+Jb+D2uFWNFNLkszo="/>
             <table:column id="c_org_motechproject_demo_domain_patient_gender" property="gender" z="user-managed"/>
             <table:column dateTimePattern="dd/MM/yyyy"
-                          id="c_org_motechproject_demo_domain_patient_dateOpened"
-                          property="dateOpened" z="user-managed"/>
+                          id="c_org_motechproject_demo_domain_patient_registrationDate"
+                          property="registrationDate" z="user-managed"/>
             <table:column id="c_org_motechproject_demo_domain_patient_status" property="status" z="user-managed"/>
         </table:table>
 

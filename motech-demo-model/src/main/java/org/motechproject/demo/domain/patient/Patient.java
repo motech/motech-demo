@@ -53,6 +53,6 @@ public class Patient extends CouchEntity {
     @Setter
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(style = "S-", pattern = "dd/MM/yyyy HH:mm")
-    private DateTime dateOpened;
+    private DateTime registrationDate;
 
 }
