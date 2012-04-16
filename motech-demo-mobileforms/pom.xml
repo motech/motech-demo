@@ -11,5 +11,9 @@
 
     <artifactId>motech-demo-mobileforms</artifactId>
 
+    <properties>
+        <build.dir>../build</build.dir>
+    </properties>
+
 
 </project>

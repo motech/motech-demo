@@ -17,7 +17,6 @@
 
     <import resource="classpath*:applicationMobileFormsAPI.xml"/>
     <import resource="classpath:applicationPlatformServerAPI.xml"/>
-
     <import resource="classpath*:applicationDomainContext.xml"/>
 
     <context:annotation-config/>

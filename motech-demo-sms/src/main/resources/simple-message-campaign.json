@@ -1,0 +1,16 @@
+[
+    {
+        "name" : "firstDayMessages",
+        "type" : "CRON",
+        "maxDuration" : "1 days",
+        "messages" : [
+            {
+                "name" : "Message",
+                "formats" : ["SMS"],
+                "languages" : ["en"],
+                "messageKey": "cron-message",
+                "cron" : "0 0/10 16,17 * * ?"
+            }
+        ]
+    }
+]

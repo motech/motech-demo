@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>motech-demo-domain</artifactId>
+    <artifactId>motech-demo-sms</artifactId>
 
     <properties>
         <build.dir>../build</build.dir>
@@ -29,14 +29,18 @@
         </dependency>
         <dependency>
             <groupId>org.motechproject</groupId>
-            <artifactId>motech-demo-sms</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <artifactId>motech-message-campaign</artifactId>
+            <version>0.10-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.13</version>
+            <groupId>org.motechproject</groupId>
+            <artifactId>motech-sms-api</artifactId>
+            <version>0.10-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.motechproject</groupId>
+            <artifactId>motech-sms-http</artifactId>
+            <version>0.10-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
 </project>

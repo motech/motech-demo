@@ -5,6 +5,7 @@ import org.motechproject.demo.domain.patient.Patient;
 import org.motechproject.demo.domain.patient.Status;
 import org.motechproject.demo.formbean.PatientForm;
 import org.motechproject.demo.repository.patient.AllPatients;
+import org.motechproject.demo.service.PatientService;
 import org.motechproject.mobileforms.api.callbacks.FormPublishHandler;
 import org.motechproject.model.MotechEvent;
 import org.motechproject.server.event.annotations.MotechListener;
@@ -19,9 +20,12 @@ public class PatientFormHandler implements FormPublishHandler {
 
     AllPatients allPatients;
 
+    PatientService patientService;
+
     @Autowired
-    public PatientFormHandler(AllPatients allPatients) {
+    public PatientFormHandler(AllPatients allPatients, PatientService patientService) {
         this.allPatients = allPatients;
+        this.patientService = patientService;
     }
 
     @Override
@@ -29,7 +33,7 @@ public class PatientFormHandler implements FormPublishHandler {
     public void handleFormEvent(MotechEvent event) {
         PatientForm form = (PatientForm) event.getParameters().get(FORM_BEAN);
         Patient patient = buildPatient(form);
-        allPatients.add(patient);
+        patientService.registerPatient(patient);
     }
 
     private Patient buildPatient(PatientForm form) {

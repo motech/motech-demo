@@ -5,10 +5,12 @@ import org.junit.Test;
 import org.motechproject.demo.builder.PatientBuilder;
 import org.motechproject.demo.domain.patient.Patient;
 import org.motechproject.demo.testutils.SpringIntegrationTest;
+import org.springframework.test.context.ContextConfiguration;
 
 import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+@ContextConfiguration(locations = "classpath*:/applicationModelContext.xml")
 public class AllPatientsIT extends SpringIntegrationTest {
 
     private AllPatients allPatients;

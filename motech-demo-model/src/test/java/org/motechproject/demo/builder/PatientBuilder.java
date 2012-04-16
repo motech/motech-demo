@@ -7,8 +7,6 @@ import org.motechproject.demo.domain.patient.Status;
 import org.motechproject.demo.testutils.UniqueMobileNumber;
 import org.motechproject.util.DateUtil;
 
-import java.util.UUID;
-
 public class PatientBuilder {
     private Patient patient = new Patient();
 
@@ -48,7 +46,7 @@ public class PatientBuilder {
     }
 
     public PatientBuilder withDefaults() {
-        return this.withId(UUID.randomUUID().toString()).
+        return this.
                 withExternalId("1234_" + DateUtil.now().getMillis()).
                 withName("name").
                 withPhoneNumber(Long.toString(UniqueMobileNumber.generate())).

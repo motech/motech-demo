@@ -463,10 +463,6 @@ fieldset th {
     width:99em;
 }
 
-#_c_org_motechproject_tama_domain_TreatmentAdvice_drugName1_id {
-    height: 22px;
-}
-
 .system_categories {
     margin-top: 15px;
 }
@@ -520,11 +516,6 @@ fieldset th {
 
 .system_categories .category .ailments .ailment .description {
     width: 160px;
-}
-
-#_title_ps_org_motechproject_tama_alert_id_pane .box {
-  margin-left : 0px;
-  display : inline-block;
 }
 
 .show_alert label {
