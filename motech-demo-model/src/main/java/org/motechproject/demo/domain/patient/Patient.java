@@ -31,7 +31,6 @@ public class Patient extends CouchEntity {
     @NotNull
     private Gender gender;
 
-
     @Getter
     @Setter
     @NotNull
