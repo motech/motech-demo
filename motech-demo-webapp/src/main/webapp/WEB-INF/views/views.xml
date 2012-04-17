@@ -7,6 +7,10 @@
         <put-attribute name="body" value="/WEB-INF/views/index.jspx"/>
     </definition>
 
+    <definition extends="login-layout" name="login">
+        <put-attribute name="body" value="/WEB-INF/views/login.jspx"/>
+    </definition>
+
     <definition extends="public" name="dataAccessFailure">
         <put-attribute name="body" value="/WEB-INF/views/dataAccessFailure.jspx"/>
     </definition>
