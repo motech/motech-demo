@@ -34,13 +34,23 @@ public class PatientReportBuilder extends BatchReportBuilder {
     protected void initializeColumns() {
         columns = new LinkedList<ExcelColumn>();
         columns.add(new ExcelColumn("Patient ID", Cell.CELL_TYPE_STRING, 8000));
+        columns.add(new ExcelColumn("Name", Cell.CELL_TYPE_STRING, 8000));
+        columns.add(new ExcelColumn("Gender", Cell.CELL_TYPE_STRING, 8000));
+        columns.add(new ExcelColumn("Phone Number", Cell.CELL_TYPE_STRING, 8000));
+        columns.add(new ExcelColumn("Date of Birth (yyyy-mm-dd)", Cell.CELL_TYPE_STRING, 10000));
+        columns.add(new ExcelColumn("Date of Registration (yyyy-mm-dd)", Cell.CELL_TYPE_STRING, 10000));
     }
 
     @Override
     protected List<Object> getRowData(Object object) {
         Patient patient = (Patient) object;
         List<Object> row = new LinkedList<Object>();
-        row.add(patient.getId());
+        row.add(patient.getExternalId());
+        row.add(patient.getName());
+        row.add(patient.getGender().name());
+        row.add(patient.getPhoneNumber());
+        row.add(patient.getDateOfBirth());
+        row.add(patient.getDateOfBirth());
         return row;
     }
 
