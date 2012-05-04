@@ -9,7 +9,7 @@
                 "formats" : ["SMS"],
                 "languages" : ["en"],
                 "messageKey": "cron-message",
-                "cron" : "0 0/10 16,17 * * ?"
+                "cron" : "0 0/10 12,13,14 * * ?"
             }
         ]
     }

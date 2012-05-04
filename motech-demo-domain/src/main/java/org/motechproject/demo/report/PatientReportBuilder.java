@@ -38,7 +38,7 @@ public class PatientReportBuilder extends BatchReportBuilder {
         columns.add(new ExcelColumn("Gender", Cell.CELL_TYPE_STRING, 8000));
         columns.add(new ExcelColumn("Phone Number", Cell.CELL_TYPE_STRING, 8000));
         columns.add(new ExcelColumn("Date of Birth (yyyy-mm-dd)", Cell.CELL_TYPE_STRING, 10000));
-        columns.add(new ExcelColumn("Date of Registration (yyyy-mm-dd)", Cell.CELL_TYPE_STRING, 10000));
+        columns.add(new ExcelColumn("Date of Registration (yyyy-mm-dd hh:mm)", Cell.CELL_TYPE_STRING, 10000));
     }
 
     @Override
@@ -50,7 +50,7 @@ public class PatientReportBuilder extends BatchReportBuilder {
         row.add(patient.getGender().name());
         row.add(patient.getPhoneNumber());
         row.add(patient.getDateOfBirth());
-        row.add(patient.getDateOfBirth());
+        row.add(patient.getRegistrationDate().toString("yyyy-MM-dd HH:mm"));
         return row;
     }
 

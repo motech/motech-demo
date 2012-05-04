@@ -9,7 +9,7 @@ import java.util.List;
 public abstract class BatchReportBuilder<T> extends ReportBuilder<T> {
 
     protected final int pageSize;
-    private static final int HEADER_ROW_COUNT = 4;
+    private static final int HEADER_ROW_COUNT = 2;
 
     public BatchReportBuilder() {
         super();

@@ -23,7 +23,7 @@
         <xf:bind action="show" id="gender" nodeset="/patientRegistraion/gender"
                  required="true()" type="xsd:string" />
         <xf:bind id="phoneNumber" nodeset="/patientRegistration/phoneNumber" type="xsd:int"
-                 constraint=". &lt;= 10000000000 &gt;= 999999999" message="Number too large. It should be 10 digits long"/>
+                 constraint=". &lt;= 10000000000 and . &gt;= 999999999" message="Phone number should be exactly 10 digits long"/>
         <xf:bind id="formname" nodeset="/ancVisit/formname" required="true()" type="xsd:string" visible="false()"/>
     </xf:model>
     <xf:group id="1">

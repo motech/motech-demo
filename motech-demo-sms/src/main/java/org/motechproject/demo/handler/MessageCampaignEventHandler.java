@@ -34,7 +34,7 @@ public class MessageCampaignEventHandler {
 
         Patient patient = allPatients.get(patientId);
 
-        String message = String.format("%s (%s):%s:%s, trying to contact. %s. %s", patient.getId(), "", patient.getPhoneNumber(), "", "", "");
+        String message = String.format("Take a paracetamol tablet after eating something.");
 
         smsService.sendSMS(patient.getPhoneNumber(), message);
 //        smsService.sendSMS(patient.getPhoneNumber(), campaignName + ":"  + messageFormat);
